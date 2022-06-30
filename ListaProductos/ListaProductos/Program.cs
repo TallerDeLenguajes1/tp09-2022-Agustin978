@@ -20,10 +20,13 @@ void main()
         Productos.Add(creaProducto());
     }
     
-    mostrar(Productos);
     //GuardaArchivoJSON(path, formato, Productos);
     SerializeJsonFile(Productos, path, formato);
     muestraJson(path, formato);
+
+    //Deserealizado del archivo Json
+    string prodDeJson = GetObjectJsonFromFile(path, formato);
+    DeserializeJson(prodDeJson);
 }
 
 Producto creaProducto()
@@ -69,17 +72,6 @@ float valorAleatorio()
     return numero;
 }
 
-void mostrar(List<Producto> Productos)
-{
-    Console.WriteLine("\n\nMuestra Productos");
-    foreach(var producto in Productos)
-    {
-        Console.WriteLine($"{producto.nombre}\n");
-        Console.Write($"{producto.fechaVencimiento}\n");
-        Console.WriteLine($"{producto.precio}U$D\n");
-    }
-}
-
 /*
 void GuardaArchivoJSON(string path, string formato, List<Producto> Productos)
 {
@@ -95,6 +87,12 @@ void GuardaArchivoJSON(string path, string formato, List<Producto> Productos)
         }
     }
 }
+
+string creaArchivoAGuardar(Producto prod)
+{
+    return JsonSerializer.Serialize(prod);
+    //Console.WriteLine(archivoAGuardar);
+}
 */
 
 //Serializado y guardado del archivos json
@@ -109,13 +107,31 @@ void SerializeJsonFile(List<Producto> Productos, string path, string formato)
     }
 }
 
-/*
-string creaArchivoAGuardar(Producto prod)
+
+
+//Funcion para obtener los elementos del json
+string GetObjectJsonFromFile(string nombreArchivo, string formato)
 {
-    return JsonSerializer.Serialize(prod);
-    //Console.WriteLine(archivoAGuardar);
+    string ObjectJson;
+    FileStream archivoJson = new FileStream(nombreArchivo + formato, FileMode.Open);
+
+    using(StreamReader strReader = new StreamReader(archivoJson))
+    {
+        ObjectJson = strReader.ReadToEnd(); //Lee todos los elementos ingresados en el archivo json
+    }
+
+    return ObjectJson; //Retorna lo que se encontro en el archivo json
 }
-*/
+
+//Deserialize del archivo json
+void DeserializeJson(string elementosJson)
+{
+    List<Producto> Productos = JsonConvert.DeserializeObject<List<Producto>>(elementosJson); //Deserealiza lo encontrado en el string de elementos que lee los datos del json
+    mostrar(Productos);
+}
+
+
+//Mostrado del archivo Json sin deserealizarlo
 void muestraJson(string nombreArchivo, string formato)
 {
     string line = "";
@@ -126,5 +142,18 @@ void muestraJson(string nombreArchivo, string formato)
         {
             Console.WriteLine($"{line}\n");
         }
+    }
+}
+
+
+//Muestra los elementos de la lista
+void mostrar(List<Producto> Productos)
+{
+    Console.WriteLine("\n\nMuestra Productos");
+    foreach (var producto in Productos)
+    {
+        Console.WriteLine($"{producto.nombre}\n");
+        Console.Write($"{producto.fechaVencimiento}\n");
+        Console.WriteLine($"{producto.precio}U$D\n");
     }
 }
