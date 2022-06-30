@@ -99,7 +99,17 @@ string creaArchivoAGuardar(Producto prod)
 void SerializeJsonFile(List<Producto> Productos, string path, string formato)
 {
     string prodJson = JsonConvert.SerializeObject(Productos.ToArray(), Formatting.Indented);
-    FileStream archivoJson = new FileStream(path + formato, FileMode.OpenOrCreate);
+    FileStream archivoJson;
+
+
+    if (!File.Exists(path+formato))
+    {
+        archivoJson = new FileStream(path + formato, FileMode.OpenOrCreate);
+    }else
+    {
+        archivoJson = new FileStream(path + formato, FileMode.Append);
+    }
+    
 
     using(StreamWriter strWriter = new StreamWriter(archivoJson))
     {
