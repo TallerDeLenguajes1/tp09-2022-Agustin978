@@ -1,0 +1,14 @@
+[
+  {
+    "nombre": "Harina",
+    "fechaVencimiento": "2019-09-02T00:00:00",
+    "precio": 4919.2837,
+    "tamanio": "1539254167"
+  },
+  {
+    "nombre": "Leche",
+    "fechaVencimiento": "2022-03-25T00:00:00",
+    "precio": 4186.4956,
+    "tamanio": "1607230191"
+  }
+]
