@@ -136,8 +136,15 @@ string GetObjectJsonFromFile(string nombreArchivo, string formato)
 //Deserialize del archivo json
 void DeserializeJson(string elementosJson)
 {
-    List<Producto> Productos = JsonConvert.DeserializeObject<List<Producto>>(elementosJson); //Deserealiza lo encontrado en el string de elementos que lee los datos del json
-    mostrar(Productos);
+    string[] elementosSeparado = elementosJson.Split(']');
+    foreach(var elemento in elementosSeparado)
+    {
+        //Console.WriteLine(elemento+"]");
+        List<Producto> Productos = JsonConvert.DeserializeObject<List<Producto>>(elemento+"]"); //Deserealiza lo encontrado en el string de elementos que lee los datos del json
+        mostrar(Productos);
+    }
+    //List<Producto> Productos = JsonConvert.DeserializeObject<List<Producto>>(elementosJson); //Deserealiza lo encontrado en el string de elementos que lee los datos del json
+    //mostrar(Productos);
 }
 
 

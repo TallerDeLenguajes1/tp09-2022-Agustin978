@@ -20,3 +20,85 @@
     "tamanio": "647221376"
   }
 ]
+[
+  {
+    "nombre": "Dulce de leche",
+    "fechaVencimiento": "2021-01-17T00:00:00",
+    "precio": 4751.8843,
+    "tamanio": "1272127598"
+  },
+  {
+    "nombre": "Azucar impalpable",
+    "fechaVencimiento": "2022-02-16T00:00:00",
+    "precio": 3662.7795,
+    "tamanio": "522881410"
+  }
+]
+[
+  {
+    "nombre": "Caldo",
+    "fechaVencimiento": "2019-08-22T00:00:00",
+    "precio": 2251.9119,
+    "tamanio": "51670721"
+  }
+]
+[
+  {
+    "nombre": "Almidon",
+    "fechaVencimiento": "2019-02-24T00:00:00",
+    "precio": 2007.8906,
+    "tamanio": "1740142422"
+  }
+]
+[
+  {
+    "nombre": "Peras",
+    "fechaVencimiento": "2019-11-23T00:00:00",
+    "precio": 2246.928,
+    "tamanio": "1218178525"
+  },
+  {
+    "nombre": "Manzanas",
+    "fechaVencimiento": "2020-09-28T00:00:00",
+    "precio": 1943.043,
+    "tamanio": "793735713"
+  }
+]
+[
+  {
+    "nombre": "Pimiento",
+    "fechaVencimiento": "2020-08-27T00:00:00",
+    "precio": 3758.247,
+    "tamanio": "1741436228"
+  }
+]
+[
+  {
+    "nombre": "Salsa picante",
+    "fechaVencimiento": "2021-08-03T00:00:00",
+    "precio": 2557.3994,
+    "tamanio": "164256089"
+  }
+]
+[
+  {
+    "nombre": "Tijeras",
+    "fechaVencimiento": "2020-03-31T00:00:00",
+    "precio": 1591.4348,
+    "tamanio": "532044340"
+  },
+  {
+    "nombre": "Cuchillos",
+    "fechaVencimiento": "2022-04-09T00:00:00",
+    "precio": 3987.9163,
+    "tamanio": "889741664"
+  }
+]
+[
+  {
+    "nombre": "Botas",
+    "fechaVencimiento": "2020-05-06T00:00:00",
+    "precio": 3813.6357,
+    "tamanio": "291396368"
+  }
+]
